@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2DCC9"
+    tools:context=".CriarPersonagemActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/txtTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Criação de Personagem"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/edtNomePersonagem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:hint="Nome do Personagem"
+            android:inputType="textPersonName"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitulo" />
+
+        <TextView
+            android:id="@+id/txtAparencia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Escolha a aparência:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtNomePersonagem" />
+
+        <HorizontalScrollView
+            android:id="@+id/scrollAparencias"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtAparencia">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgAparencia1"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="8dp"
+                    android:background="#F2DCC9"
+                    android:src="@drawable/imagem1"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <ImageView
+                    android:id="@+id/imgAparencia2"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="8dp"
+                    android:background="#F2DCC9"
+                    android:src="@drawable/imagem2"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <ImageView
+                    android:id="@+id/imgAparencia3"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="8dp"
+                    android:background="#F2DCC9"
+                    android:src="@drawable/imagem3"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <ImageView
+                    android:id="@+id/imgAparencia4"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="8dp"
+                    android:background="#F2DCC9"
+                    android:src="@drawable/imagem4"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/txtAtributos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Atributos:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/scrollAparencias" />
+
+        <!-- Força -->
+        <TextView
+            android:id="@+id/txtForca"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Força:"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtAtributos" />
+
+        <TextView
+            android:id="@+id/txtValorForca"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="0"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/txtForca"
+            app:layout_constraintStart_toEndOf="@+id/txtForca"
+            app:layout_constraintTop_toTopOf="@+id/txtForca" />
+
+        <ImageButton
+            android:id="@+id/btnRolarForca"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/botao_arredondado"
+            android:src="@drawable/dice"
+            android:padding="1dp"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="@+id/txtValorForca"
+            app:layout_constraintStart_toEndOf="@+id/txtValorForca"
+            app:layout_constraintTop_toTopOf="@+id/txtValorForca" />
+
+        <!-- Defesa -->
+        <TextView
+            android:id="@+id/txtDefesa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Defesa:"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtForca" />
+
+        <TextView
+            android:id="@+id/txtValorDefesa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="0"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/txtDefesa"
+            app:layout_constraintStart_toEndOf="@+id/txtDefesa"
+            app:layout_constraintTop_toTopOf="@+id/txtDefesa" />
+
+        <ImageButton
+            android:id="@+id/btnRolarDefesa"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/botao_arredondado"
+            android:src="@drawable/dice"
+            android:padding="1dp"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="@+id/txtValorDefesa"
+            app:layout_constraintStart_toEndOf="@+id/txtValorDefesa"
+            app:layout_constraintTop_toTopOf="@+id/txtValorDefesa" />
+
+        <!-- Destreza -->
+        <TextView
+            android:id="@+id/txtDestreza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Destreza:"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDefesa" />
+
+        <TextView
+            android:id="@+id/txtValorDestreza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="0"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/txtDestreza"
+            app:layout_constraintStart_toEndOf="@+id/txtDestreza"
+            app:layout_constraintTop_toTopOf="@+id/txtDestreza" />
+
+        <ImageButton
+            android:id="@+id/btnRolarDestreza"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/botao_arredondado"
+            android:src="@drawable/dice"
+            android:padding="1dp"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="@+id/txtValorDestreza"
+            app:layout_constraintStart_toEndOf="@+id/txtValorDestreza"
+            app:layout_constraintTop_toTopOf="@+id/txtValorDestreza" />
+
+        <Button
+            android:id="@+id/btnSalvarPersonagem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="SALVAR PERSONAGEM"
+            android:textSize="16sp"
+            android:padding="16dp"
+            android:backgroundTint="#FF8842"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDestreza" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
