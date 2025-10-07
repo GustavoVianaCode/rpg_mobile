@@ -61,45 +61,49 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/imgAparencia1"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="8dp"
                     android:background="#F2DCC9"
-                    android:src="@drawable/imagem1"
                     android:clickable="true"
-                    android:focusable="true" />
+                    android:focusable="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/imagem1" />
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/imgAparencia2"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="8dp"
                     android:background="#F2DCC9"
-                    android:src="@drawable/imagem2"
                     android:clickable="true"
-                    android:focusable="true" />
+                    android:focusable="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/imagem2" />
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/imgAparencia3"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="8dp"
                     android:background="#F2DCC9"
-                    android:src="@drawable/imagem3"
                     android:clickable="true"
-                    android:focusable="true" />
+                    android:focusable="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/imagem3" />
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/imgAparencia4"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="8dp"
                     android:background="#F2DCC9"
-                    android:src="@drawable/imagem4"
                     android:clickable="true"
-                    android:focusable="true" />
+                    android:focusable="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/imagem4" />
 
             </LinearLayout>
         </HorizontalScrollView>

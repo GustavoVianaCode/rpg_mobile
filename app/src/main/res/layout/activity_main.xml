@@ -26,15 +26,4 @@
         app:strokeWidth="3dp"
         app:strokeColor="#281122"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Ver personagens"
-        android:textSize="20sp"
-        android:backgroundTint="#F07A34"
-        android:textColor="#281122"
-        app:strokeWidth="3dp"
-        app:strokeColor="#281122"/>
-
 </LinearLayout>
