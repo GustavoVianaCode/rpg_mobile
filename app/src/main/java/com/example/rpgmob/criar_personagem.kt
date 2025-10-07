@@ -1,6 +1,8 @@
 package com.example.rpgmob
 
 import android.os.Bundle
+import android.os.PersistableBundle
+import android.view.Menu
 import android.view.View
 import android.widget.ImageButton
 import android.widget.TextView
@@ -10,13 +12,18 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import kotlin.compareTo
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.widget.Toolbar
 
 class criar_personagem : AppCompatActivity() {
     private var aparenciaSelecionada: Int = -1
+    lateinit var botao_voltar: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_criar_personagem)
+
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
 
         // --- EXISTENTE: Configurar os cliques dos botões de aparência ---
         val btnAparencia1 = findViewById<ImageButton>(R.id.imgAparencia1)
@@ -69,10 +76,17 @@ class criar_personagem : AppCompatActivity() {
             view.isEnabled = false
             view.animate().rotationBy(360f).setDuration(300).start()
         }
+
+
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu,menu)
+        return true
+    }
     // Função utilitária para gerar um d20 (1..20)
     private fun rollD20(): Int = Random.nextInt(1, 21)
+
 
     /*
     // Se preferir 3d6 (atributos clássicos 3..18), substitua rollD20() por:
@@ -91,4 +105,5 @@ class criar_personagem : AppCompatActivity() {
 
         // Aqui você pode adicionar lógica adicional, como salvar a escolha do usuário
     }
+
 }
