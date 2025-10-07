@@ -12,15 +12,30 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Voltar"
+            android:scaleType="fitCenter"
+            android:src="@drawable/seta"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/txtTitulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:text="Criação de Personagem"
-            android:textSize="24sp"
-            android:textStyle="bold"
             android:textColor="#333333"
+            android:textSize="23sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.506"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -108,6 +123,7 @@
             </LinearLayout>
         </HorizontalScrollView>
 
+
         <TextView
             android:id="@+id/txtAtributos"
             android:layout_width="wrap_content"
@@ -142,20 +158,22 @@
             app:layout_constraintStart_toEndOf="@+id/txtForca"
             app:layout_constraintTop_toTopOf="@+id/txtForca" />
 
+        <!-- Defesa -->
         <ImageButton
             android:id="@+id/btnRolarForca"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="12dp"
             android:background="@drawable/botao_arredondado"
-            android:src="@drawable/dice"
+            android:onClick="rolarForca"
             android:padding="1dp"
             android:scaleType="centerInside"
+            android:src="@drawable/dice"
             app:layout_constraintBottom_toBottomOf="@+id/txtValorForca"
             app:layout_constraintStart_toEndOf="@+id/txtValorForca"
-            app:layout_constraintTop_toTopOf="@+id/txtValorForca" />
+            app:layout_constraintTop_toTopOf="@+id/txtValorForca"
+            app:layout_constraintVertical_bias="0.888" />
 
-        <!-- Defesa -->
         <TextView
             android:id="@+id/txtDefesa"
             android:layout_width="wrap_content"
@@ -184,9 +202,10 @@
             android:layout_height="40dp"
             android:layout_marginStart="16dp"
             android:background="@drawable/botao_arredondado"
-            android:src="@drawable/dice"
+            android:onClick="rolarDefesa"
             android:padding="1dp"
             android:scaleType="centerInside"
+            android:src="@drawable/dice"
             app:layout_constraintBottom_toBottomOf="@+id/txtValorDefesa"
             app:layout_constraintStart_toEndOf="@+id/txtValorDefesa"
             app:layout_constraintTop_toTopOf="@+id/txtValorDefesa" />
@@ -220,9 +239,10 @@
             android:layout_height="40dp"
             android:layout_marginStart="16dp"
             android:background="@drawable/botao_arredondado"
-            android:src="@drawable/dice"
+            android:onClick="rolarDestreza"
             android:padding="1dp"
             android:scaleType="centerInside"
+            android:src="@drawable/dice"
             app:layout_constraintBottom_toBottomOf="@+id/txtValorDestreza"
             app:layout_constraintStart_toEndOf="@+id/txtValorDestreza"
             app:layout_constraintTop_toTopOf="@+id/txtValorDestreza" />
@@ -232,10 +252,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
+            android:backgroundTint="#FF8842"
+            android:padding="16dp"
             android:text="SALVAR PERSONAGEM"
             android:textSize="16sp"
-            android:padding="16dp"
-            android:backgroundTint="#FF8842"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtDestreza" />
