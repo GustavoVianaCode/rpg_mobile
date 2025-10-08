@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">RPG Mob</string>
+    <string-array name="classes_array">
+        <item>Mago</item>
+        <item>Paladino</item>
+        <item>Bárbaro</item>
+        <item>Ladino</item>
+    </string-array>
 </resources>

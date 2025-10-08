@@ -1,11 +1,16 @@
 package com.example.rpgmob
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.view.Menu
+import android.view.MenuItem
 import android.view.View
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlin.random.Random
 import androidx.core.view.ViewCompat
@@ -51,6 +56,14 @@ class criar_personagem : AppCompatActivity() {
         val btnDefesa = findViewById<ImageButton>(R.id.btnRolarDefesa)
         val btnDestreza = findViewById<ImageButton>(R.id.btnRolarDestreza)
 
+        botao_voltar = findViewById(R.id.btnBack)
+        botao_voltar.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
+
+        val classes = findViewById<AutoCompleteTextView>(R.id.classes)
+        escolherClasses(classes)
+
         // Listener para Força
         btnForca.setOnClickListener { view ->
             val n = rollD20()
@@ -87,11 +100,39 @@ class criar_personagem : AppCompatActivity() {
     // Função utilitária para gerar um d20 (1..20)
     private fun rollD20(): Int = Random.nextInt(1, 21)
 
+    fun escolherClasses(classes: AutoCompleteTextView){
+        val classes_array = resources.getStringArray(R.array.classes_array)
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item,classes_array)
+        classes.setAdapter(adapter)
+    }
 
-    /*
-    // Se preferir 3d6 (atributos clássicos 3..18), substitua rollD20() por:
-    private fun roll3d6(): Int = List(3) { Random.nextInt(1, 7) }.sum()
-    */
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId){
+            R.id.resetar_atributo -> {
+                val atributos = listOf<TextView>(
+                    findViewById<TextView>(R.id.txtValorForca),
+                    findViewById<TextView>(R.id.txtValorDefesa),
+                    findViewById<TextView>(R.id.txtValorDestreza)
+                )
+                val butoes = listOf<ImageButton>(
+                    findViewById<ImageButton>(R.id.btnRolarForca),
+                    findViewById<ImageButton>(R.id.btnRolarDefesa),
+                    findViewById<ImageButton>(R.id.btnRolarDestreza)
+                )
+                atributos.forEach { it ->
+                    it.text = 0.toString()
+                }
+                butoes.forEach { it ->
+                    it.isEnabled = true
+                }
+                true
+            }
+            else -> {
+                Toast.makeText(this, "Quero fazer o L", Toast.LENGTH_SHORT).show()
+                false
+            }
+        }
+    }
 
     private fun selecionarAparencia(index: Int, botoes: List<ImageButton>) {
         // Desmarcar o botão anteriormente selecionado

@@ -172,7 +172,6 @@
             android:layout_height="40dp"
             android:layout_marginStart="16dp"
             android:background="@drawable/botao_arredondado"
-            android:onClick="rolarDefesa"
             android:padding="1dp"
             android:scaleType="centerInside"
             android:src="@drawable/dice"
@@ -210,7 +209,6 @@
             android:layout_height="40dp"
             android:layout_marginStart="16dp"
             android:background="@drawable/botao_arredondado"
-            android:onClick="rolarForca"
             android:padding="1dp"
             android:scaleType="centerInside"
             android:src="@drawable/dice"
@@ -248,7 +246,6 @@
             android:layout_height="40dp"
             android:layout_marginStart="16dp"
             android:background="@drawable/botao_arredondado"
-            android:onClick="rolarDestreza"
             android:padding="1dp"
             android:scaleType="centerInside"
             android:src="@drawable/dice"
@@ -261,20 +258,7 @@
 
         <!-- Destreza -->
 
-        <Button
-            android:id="@+id/btnSalvarPersonagem"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="49dp"
-            android:layout_marginEnd="16dp"
-            android:backgroundTint="#FF8842"
-            android:padding="16dp"
-            android:text="SALVAR PERSONAGEM"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnRolarDestreza" />
+
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -288,6 +272,35 @@
             app:layout_constraintBottom_toBottomOf="@+id/txtTitulo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/txtTitulo" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_menu_classe"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="Escolha sua Classe"
+            app:layout_constraintBottom_toTopOf="@+id/txtAtributos"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/scrollAparencias">
+
+            <AutoCompleteTextView
+                android:id="@+id/classes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="28dp"
+                android:inputType="none"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toTopOf="@+id/txtAtributos"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.422"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scrollAparencias" />
+        </com.google.android.material.textfield.TextInputLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
