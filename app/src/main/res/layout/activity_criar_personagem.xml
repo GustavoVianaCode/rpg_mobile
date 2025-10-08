@@ -84,8 +84,8 @@
 
                 <ImageButton
                     android:id="@+id/imgAparencia1"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
                     android:layout_margin="8dp"
                     android:background="@drawable/selector_imagem"
                     android:clickable="true"
@@ -95,8 +95,8 @@
 
                 <ImageButton
                     android:id="@+id/imgAparencia2"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
                     android:layout_margin="8dp"
                     android:background="@drawable/selector_imagem"
                     android:clickable="true"
@@ -106,8 +106,8 @@
 
                 <ImageButton
                     android:id="@+id/imgAparencia3"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
                     android:layout_margin="8dp"
                     android:background="@drawable/selector_imagem"
                     android:clickable="true"
@@ -117,8 +117,8 @@
 
                 <ImageButton
                     android:id="@+id/imgAparencia4"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
                     android:layout_margin="8dp"
                     android:background="@drawable/selector_imagem"
                     android:clickable="true"
@@ -128,8 +128,8 @@
 
                 <ImageButton
                     android:id="@+id/imgAparencia5"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
                     android:layout_margin="8dp"
                     android:background="@drawable/selector_imagem"
                     android:clickable="true"
@@ -140,8 +140,6 @@
             </LinearLayout>
         </HorizontalScrollView>
 
-
-        <!-- Força -->
 
         <TextView
             android:id="@+id/txtAtributos"
@@ -264,11 +262,6 @@
             app:layout_constraintStart_toEndOf="@+id/txtValorDestreza"
             app:layout_constraintTop_toTopOf="@+id/txtValorDestreza"
             app:layout_constraintVertical_bias="0.444" />
-
-        <!-- Defesa -->
-
-        <!-- Destreza -->
-
 
 
         <androidx.appcompat.widget.Toolbar
