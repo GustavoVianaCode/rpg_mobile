@@ -84,47 +84,58 @@
 
                 <ImageButton
                     android:id="@+id/imgAparencia1"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:layout_margin="8dp"
                     android:background="@drawable/selector_imagem"
                     android:clickable="true"
                     android:focusable="true"
-                    android:scaleType="centerCrop"
+                    android:scaleType="fitCenter"
                     android:src="@drawable/imagem1" />
 
                 <ImageButton
                     android:id="@+id/imgAparencia2"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:layout_margin="8dp"
                     android:background="@drawable/selector_imagem"
                     android:clickable="true"
                     android:focusable="true"
-                    android:scaleType="centerCrop"
+                    android:scaleType="fitCenter"
                     android:src="@drawable/imagem2" />
 
                 <ImageButton
                     android:id="@+id/imgAparencia3"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:layout_margin="8dp"
                     android:background="@drawable/selector_imagem"
                     android:clickable="true"
                     android:focusable="true"
-                    android:scaleType="centerCrop"
+                    android:scaleType="fitCenter"
                     android:src="@drawable/imagem3" />
 
                 <ImageButton
                     android:id="@+id/imgAparencia4"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:layout_margin="8dp"
                     android:background="@drawable/selector_imagem"
                     android:clickable="true"
                     android:focusable="true"
-                    android:scaleType="centerCrop"
+                    android:scaleType="fitCenter"
                     android:src="@drawable/imagem4" />
+
+                <ImageButton
+                    android:id="@+id/imgAparencia5"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/selector_imagem"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/imagem5" />
 
             </LinearLayout>
         </HorizontalScrollView>

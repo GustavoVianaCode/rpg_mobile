@@ -35,13 +35,15 @@ class criar_personagem : AppCompatActivity() {
         val btnAparencia2 = findViewById<ImageButton>(R.id.imgAparencia2)
         val btnAparencia3 = findViewById<ImageButton>(R.id.imgAparencia3)
         val btnAparencia4 = findViewById<ImageButton>(R.id.imgAparencia4)
+        val btnAparencia5 = findViewById<ImageButton>(R.id.imgAparencia5)
 
-        val botoesAparencia = listOf(btnAparencia1, btnAparencia2, btnAparencia3, btnAparencia4)
+        val botoesAparencia = listOf(btnAparencia1, btnAparencia2, btnAparencia3, btnAparencia4, btnAparencia5)
 
         btnAparencia1.setOnClickListener { selecionarAparencia(0, botoesAparencia) }
         btnAparencia2.setOnClickListener { selecionarAparencia(1, botoesAparencia) }
         btnAparencia3.setOnClickListener { selecionarAparencia(2, botoesAparencia) }
         btnAparencia4.setOnClickListener { selecionarAparencia(3, botoesAparencia) }
+        btnAparencia5.setOnClickListener { selecionarAparencia(4, botoesAparencia) }
 
         // --- NOVO: Referências para TextViews (valores) e ImageButtons (rolar dados) ---
         // Certifique-se que esses IDs existem no seu XML:
