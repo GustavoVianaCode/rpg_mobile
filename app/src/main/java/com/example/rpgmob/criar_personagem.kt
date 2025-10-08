@@ -53,10 +53,12 @@ class criar_personagem : AppCompatActivity() {
         val txtForca = findViewById<TextView>(R.id.txtValorForca)
         val txtDefesa = findViewById<TextView>(R.id.txtValorDefesa)
         val txtDestreza = findViewById<TextView>(R.id.txtValorDestreza)
+        val txtVida = findViewById<TextView>(R.id.txtValorVida)
 
         val btnForca = findViewById<ImageButton>(R.id.btnRolarForca)
         val btnDefesa = findViewById<ImageButton>(R.id.btnRolarDefesa)
         val btnDestreza = findViewById<ImageButton>(R.id.btnRolarDestreza)
+        val btnVida = findViewById<ImageButton>(R.id.btnRolarVida)
 
         botao_voltar = findViewById(R.id.btnBack)
         botao_voltar.setOnClickListener {
@@ -92,6 +94,16 @@ class criar_personagem : AppCompatActivity() {
             view.animate().rotationBy(360f).setDuration(300).start()
         }
 
+        btnVida.setOnClickListener { view ->
+            val vidaBase = 20
+            val bonusVida = rollD20()
+            val vidaTotal = vidaBase + bonusVida
+
+            txtVida.text = vidaTotal.toString()
+            view.isEnabled = false
+            view.animate().rotationBy(360f).setDuration(300).start()
+        }
+
 
     }
 
@@ -114,12 +126,14 @@ class criar_personagem : AppCompatActivity() {
                 val atributos = listOf<TextView>(
                     findViewById<TextView>(R.id.txtValorForca),
                     findViewById<TextView>(R.id.txtValorDefesa),
-                    findViewById<TextView>(R.id.txtValorDestreza)
+                    findViewById<TextView>(R.id.txtValorDestreza),
+                    findViewById<TextView>(R.id.txtValorVida)
                 )
                 val butoes = listOf<ImageButton>(
                     findViewById<ImageButton>(R.id.btnRolarForca),
                     findViewById<ImageButton>(R.id.btnRolarDefesa),
-                    findViewById<ImageButton>(R.id.btnRolarDestreza)
+                    findViewById<ImageButton>(R.id.btnRolarDestreza),
+                    findViewById<ImageButton>(R.id.btnRolarVida)
                 )
                 atributos.forEach { it ->
                     it.text = 0.toString()
