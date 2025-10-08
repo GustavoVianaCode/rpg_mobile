@@ -169,11 +169,12 @@
             android:id="@+id/txtDestreza"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="56dp"
             android:text="Destreza:"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtDefesa" />
+            app:layout_constraintBottom_toBottomOf="@+id/txtForca"
+            app:layout_constraintStart_toEndOf="@+id/btnRolarForca"
+            app:layout_constraintTop_toTopOf="@+id/txtForca" />
 
         <ImageButton
             android:id="@+id/btnRolarDefesa"
@@ -206,7 +207,7 @@
             android:id="@+id/txtDefesa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="20dp"
             android:text="Defesa:"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -258,10 +259,9 @@
             android:padding="1dp"
             android:scaleType="centerInside"
             android:src="@drawable/dice"
-            app:layout_constraintBottom_toBottomOf="@+id/txtValorDestreza"
+            app:layout_constraintBottom_toBottomOf="@+id/btnRolarForca"
             app:layout_constraintStart_toEndOf="@+id/txtValorDestreza"
-            app:layout_constraintTop_toTopOf="@+id/txtValorDestreza"
-            app:layout_constraintVertical_bias="0.444" />
+            app:layout_constraintTop_toTopOf="@+id/btnRolarForca" />
 
 
         <androidx.appcompat.widget.Toolbar
@@ -305,6 +305,42 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/scrollAparencias" />
         </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="81dp"
+            android:text="Vida"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtDefesa"
+            app:layout_constraintStart_toEndOf="@+id/btnRolarDefesa"
+            app:layout_constraintTop_toTopOf="@+id/txtDefesa" />
+
+        <ImageButton
+            android:id="@+id/btnRolarVida"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/botao_arredondado"
+            android:padding="1dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/dice"
+            app:layout_constraintBottom_toBottomOf="@+id/btnRolarDefesa"
+            app:layout_constraintStart_toEndOf="@+id/textView2"
+            app:layout_constraintTop_toTopOf="@+id/btnRolarDefesa" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="0"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/textView"
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            app:layout_constraintTop_toTopOf="@+id/textView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
