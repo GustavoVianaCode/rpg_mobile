@@ -28,12 +28,6 @@ class lista_personagens : AppCompatActivity() {
             finish() // Volta para a tela anterior
         }
 
-        // Configura o botão de novo personagem
-        val btnNovo = findViewById<FloatingActionButton>(R.id.btnNovoPersonagem)
-        btnNovo.setOnClickListener {
-            startActivity(Intent(this, criar_personagem::class.java))
-        }
-
         // Carrega e exibe a lista de personagens
         carregarPersonagens()
     }
