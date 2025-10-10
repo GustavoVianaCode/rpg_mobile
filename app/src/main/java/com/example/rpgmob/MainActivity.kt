@@ -16,5 +16,10 @@ class MainActivity : AppCompatActivity() {
         criarbtn.setOnClickListener {
             startActivity(Intent(this, criar_personagem::class.java))
         }
+        val btnListaPersonagens = findViewById<Button>(R.id.btnListaPersonagens)
+        btnListaPersonagens.setOnClickListener {
+            startActivity(Intent(this, lista_personagens::class.java))
+        }
     }
+
 }

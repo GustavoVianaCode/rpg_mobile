@@ -8,6 +8,8 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
+import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
@@ -19,6 +21,7 @@ import kotlin.compareTo
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.widget.Toolbar
 
+//Permite definir nome, aparencia,classe e atributos do personagem
 class criar_personagem : AppCompatActivity() {
     private var aparenciaSelecionada: Int = -1
     lateinit var botao_voltar: ImageButton
@@ -44,11 +47,6 @@ class criar_personagem : AppCompatActivity() {
         btnAparencia3.setOnClickListener { selecionarAparencia(2, botoesAparencia) }
         btnAparencia4.setOnClickListener { selecionarAparencia(3, botoesAparencia) }
         btnAparencia5.setOnClickListener { selecionarAparencia(4, botoesAparencia) }
-
-        // --- NOVO: Referências para TextViews (valores) e ImageButtons (rolar dados) ---
-        // Certifique-se que esses IDs existem no seu XML:
-        // txtValorForca, txtValorDefesa, txtValorDestreza
-        // btnRolarForca, btnRolarDefesa, btnRolarDestreza
 
         val txtForca = findViewById<TextView>(R.id.txtValorForca)
         val txtDefesa = findViewById<TextView>(R.id.txtValorDefesa)
@@ -94,6 +92,7 @@ class criar_personagem : AppCompatActivity() {
             view.animate().rotationBy(360f).setDuration(300).start()
         }
 
+        // Listener para Vida
         btnVida.setOnClickListener { view ->
             val vidaBase = 20
             val bonusVida = rollD20()
@@ -104,6 +103,11 @@ class criar_personagem : AppCompatActivity() {
             view.animate().rotationBy(360f).setDuration(300).start()
         }
 
+        // Configurando o botão para salvar o personagem
+        val btnSalvar = findViewById<Button>(R.id.btnSalvar)
+        btnSalvar.setOnClickListener {
+            salvarPersonagem()
+        }
 
     }
 
@@ -111,7 +115,7 @@ class criar_personagem : AppCompatActivity() {
         menuInflater.inflate(R.menu.main_menu,menu)
         return true
     }
-    // Função utilitária para gerar um d20 (1..20)
+    // Função q gera um d20 (1..20)
     private fun rollD20(): Int = Random.nextInt(1, 21)
 
     fun escolherClasses(classes: AutoCompleteTextView){
@@ -162,5 +166,60 @@ class criar_personagem : AppCompatActivity() {
 
         // Aqui você pode adicionar lógica adicional, como salvar a escolha do usuário
     }
+    // Função para salvar os dados do personagem usando SharedPreferences
+    private fun salvarPersonagem() {
+        // Verificar se todos os campos necessários foram preenchidos
+        val nomePersonagem = findViewById<EditText>(R.id.edtNomePersonagem).text.toString()
+        val classePersonagem = findViewById<AutoCompleteTextView>(R.id.classes).text.toString()
+        val forca = findViewById<TextView>(R.id.txtValorForca).text.toString()
+        val defesa = findViewById<TextView>(R.id.txtValorDefesa).text.toString()
+        val destreza = findViewById<TextView>(R.id.txtValorDestreza).text.toString()
+        val vida = findViewById<TextView>(R.id.txtValorVida).text.toString()
 
+        // Validações básicas
+        if (nomePersonagem.isEmpty()) {
+            Toast.makeText(this, "Por favor, dê um nome ao seu personagem!", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        if (classePersonagem.isEmpty()) {
+            Toast.makeText(this, "Por favor, escolha uma classe para o personagem!", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        if (aparenciaSelecionada == -1) {
+            Toast.makeText(this, "Por favor, escolha uma aparência para o personagem!", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        if (forca == "0" || defesa == "0" || destreza == "0" || vida == "0") {
+            Toast.makeText(this, "Por favor, role todos os atributos antes de salvar!", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        // Criar um ID único para o personagem (usando timestamp)
+        val personagemId = System.currentTimeMillis().toString()
+
+        // Salvar no SharedPreferences
+        val sharedPreferences = getSharedPreferences("RPG_PERSONAGENS", MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+
+        editor.putString("$personagemId-nome", nomePersonagem)
+        editor.putString("$personagemId-classe", classePersonagem)
+        editor.putInt("$personagemId-aparencia", aparenciaSelecionada)
+        editor.putString("$personagemId-forca", forca)
+        editor.putString("$personagemId-defesa", defesa)
+        editor.putString("$personagemId-destreza", destreza)
+        editor.putString("$personagemId-vida", vida)
+
+        // Salvar a lista de IDs de personagens
+        val personagensIds = sharedPreferences.getString("personagens_ids", "") ?: ""
+        val novaLista = if (personagensIds.isEmpty()) personagemId else "$personagensIds,$personagemId"
+        editor.putString("personagens_ids", novaLista)
+
+        editor.apply()
+
+        Toast.makeText(this, "Personagem $nomePersonagem salvo com sucesso!", Toast.LENGTH_SHORT).show()
+
+    }
 }

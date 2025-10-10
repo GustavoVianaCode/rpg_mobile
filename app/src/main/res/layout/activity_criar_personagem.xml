@@ -27,8 +27,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/txtTitulo" />
 
-
-
         <TextView
             android:id="@+id/txtTitulo"
             android:layout_width="wrap_content"
@@ -68,6 +66,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edtNomePersonagem" />
 
+        <!-- Rolagem para ver opções de aparencia  -->
         <HorizontalScrollView
             android:id="@+id/scrollAparencias"
             android:layout_width="match_parent"
@@ -139,7 +138,6 @@
 
             </LinearLayout>
         </HorizontalScrollView>
-
 
         <TextView
             android:id="@+id/txtAtributos"
@@ -341,6 +339,16 @@
             app:layout_constraintBottom_toBottomOf="@+id/textVida"
             app:layout_constraintStart_toEndOf="@+id/textVida"
             app:layout_constraintTop_toTopOf="@+id/textVida" />
+
+        <Button
+            android:id="@+id/btnSalvar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Salvar Personagem"
+            app:layout_constraintTop_toBottomOf="@+id/txtValorVida"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
