@@ -12,10 +12,6 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-/**
- * Activity responsável por exibir a lista de personagens salvos.
- * Permite visualizar, excluir e criar novos personagens.
- */
 class lista_personagens : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,18 +28,16 @@ class lista_personagens : AppCompatActivity() {
         carregarPersonagens()
     }
 
-    /**
-     * Recarrega a lista de personagens sempre que a activity se tornar visível,
-     * para garantir que novos personagens criados apareçam na lista.
-     */
+
+    //Recarrega lista de personagens sempre que a activity se tornar visível, para garantir que novos personagens criados apareçam na lista.
+
     override fun onResume() {
         super.onResume()
         carregarPersonagens()
     }
 
-    /**
-     * Carrega os personagens salvos no SharedPreferences e exibe na ListView.
-     */
+    //Carrega os personagens salvos no SharedPreferences e exibe na ListView.
+
     private fun carregarPersonagens() {
         val listView = findViewById<ListView>(R.id.listViewPersonagens)
         val txtSemPersonagens = findViewById<TextView>(R.id.txtSemPersonagens)

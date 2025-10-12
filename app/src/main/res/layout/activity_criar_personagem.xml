@@ -156,7 +156,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:text="0"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/txtDestreza"
             app:layout_constraintStart_toEndOf="@+id/txtDestreza"
@@ -169,7 +169,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="56dp"
             android:text="Destreza:"
-            android:textSize="16sp"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@+id/txtForca"
             app:layout_constraintStart_toEndOf="@+id/btnRolarForca"
             app:layout_constraintTop_toTopOf="@+id/txtForca" />
@@ -194,7 +194,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:text="0"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/txtDefesa"
             app:layout_constraintStart_toEndOf="@+id/txtDefesa"
@@ -207,7 +207,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="Defesa:"
-            android:textSize="16sp"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtForca" />
 
@@ -231,7 +231,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:text="0"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/txtForca"
             app:layout_constraintStart_toEndOf="@+id/txtForca"
@@ -244,7 +244,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Força:"
-            android:textSize="16sp"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtAtributos" />
 
@@ -310,7 +310,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="81dp"
             android:text="Vida"
-            android:textSize="16sp"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@+id/txtDefesa"
             app:layout_constraintStart_toEndOf="@+id/btnRolarDefesa"
             app:layout_constraintTop_toTopOf="@+id/txtDefesa" />
@@ -334,7 +334,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:text="0"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/textVida"
             app:layout_constraintStart_toEndOf="@+id/textVida"
@@ -342,10 +342,15 @@
 
         <Button
             android:id="@+id/btnSalvar"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="25dp"
             android:text="Salvar Personagem"
+            android:textSize="20sp"
+            android:backgroundTint="#F07A34"
+            android:textColor="#281122"
+            app:strokeWidth="2dp"
+            app:strokeColor="#281122"
             app:layout_constraintTop_toBottomOf="@+id/txtValorVida"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
