@@ -30,14 +30,12 @@ class lista_personagens : AppCompatActivity() {
 
 
     //Recarrega lista de personagens sempre que a activity se tornar visível, para garantir que novos personagens criados apareçam na lista.
-
     override fun onResume() {
         super.onResume()
         carregarPersonagens()
     }
 
     //Carrega os personagens salvos no SharedPreferences e exibe na ListView.
-
     private fun carregarPersonagens() {
         val listView = findViewById<ListView>(R.id.listViewPersonagens)
         val txtSemPersonagens = findViewById<TextView>(R.id.txtSemPersonagens)
@@ -115,59 +113,5 @@ class lista_personagens : AppCompatActivity() {
         // Define o adaptador na ListView
         listView.adapter = adapter
 
-        // Configura o clique longo para excluir um personagem
-        listView.setOnItemLongClickListener { _, _, position, _ ->
-            val personagem = listaPersonagens[position]
-            mostrarDialogoExcluir(personagem["id"] ?: "", personagem["nome"] ?: "")
-            true
-        }
-    }
-
-    /**
-     * Exibe um diálogo de confirmação para excluir um personagem.
-     *
-     * @param id O ID do personagem a ser excluído
-     * @param nome O nome do personagem para exibir no diálogo
-     */
-    private fun mostrarDialogoExcluir(id: String, nome: String) {
-        AlertDialog.Builder(this)
-            .setTitle("Excluir Personagem")
-            .setMessage("Deseja excluir o personagem $nome?")
-            .setPositiveButton("Sim") { _, _ ->
-                excluirPersonagem(id)
-            }
-            .setNegativeButton("Não", null)
-            .show()
-    }
-
-    /**
-     * Exclui um personagem do SharedPreferences.
-     *
-     * @param id O ID do personagem a ser excluído
-     */
-    private fun excluirPersonagem(id: String) {
-        val sharedPreferences = getSharedPreferences("RPG_PERSONAGENS", MODE_PRIVATE)
-        val editor = sharedPreferences.edit()
-
-        // Remove os dados do personagem
-        editor.remove("$id-nome")
-        editor.remove("$id-classe")
-        editor.remove("$id-aparencia")
-        editor.remove("$id-forca")
-        editor.remove("$id-defesa")
-        editor.remove("$id-destreza")
-        editor.remove("$id-vida")
-
-        // Atualiza a lista de IDs
-        val personagensIds = sharedPreferences.getString("personagens_ids", "") ?: ""
-        val listaIds = personagensIds.split(",").toMutableList()
-        listaIds.remove(id)
-        val novaListaIds = listaIds.joinToString(",")
-        editor.putString("personagens_ids", novaListaIds)
-
-        editor.apply()
-
-        // Recarrega a lista de personagens
-        carregarPersonagens()
     }
 }

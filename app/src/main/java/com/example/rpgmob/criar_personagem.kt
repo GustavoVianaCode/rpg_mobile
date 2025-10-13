@@ -21,7 +21,6 @@ import kotlin.compareTo
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.widget.Toolbar
 
-//Permite definir nome, aparencia,classe e atributos do personagem
 class criar_personagem : AppCompatActivity() {
     private var aparenciaSelecionada: Int = -1
     lateinit var botao_voltar: ImageButton
@@ -164,7 +163,6 @@ class criar_personagem : AppCompatActivity() {
         aparenciaSelecionada = index
         botoes[aparenciaSelecionada].isSelected = true
 
-        // Aqui você pode adicionar lógica adicional, como salvar a escolha do usuário
     }
     // Função para salvar os dados do personagem usando SharedPreferences
     private fun salvarPersonagem() {
